@@ -144,7 +144,7 @@ const { data: home, status } = useAsyncData('home', async () => {
     console.error('API Error:', err); // Debug error API
     return null;
   }
-}, { server: true })
+}, { server: false })
 // section one
 const sectionOne = computed(() => home.value?.[0]?.acf?.home_section_1)
 const sectionTwo = computed(() => home.value?.[0]?.acf?.home_section_2)

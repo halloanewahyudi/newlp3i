@@ -122,7 +122,7 @@ const { data, status } = await useAsyncData('program', async () => {
     console.error('API Error:', err); // Debug error API
     return null;
   }
-}, { server: true });
+}, { server: false });
 
 // create tab content
 const selectedTab = ref(0);
