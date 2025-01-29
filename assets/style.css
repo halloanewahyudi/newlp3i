@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+body{
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-weight:200-800;
+    font-style: normal;
+    @apply text-gray-700;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-semibold;
+}
+
+h1 {
+    @apply text-4xl lg:text-6xl
+}
+
+h2 {
+    @apply text-3xl lg:text-4xl
+}
+
+h3 {
+    @apply text-2xl lg:text-3xl
+}
+
+h4 {
+    @apply text-xl lg:text-2xl
+}
+
+h5 {
+    @apply text-lg lg:text-xl
+}
+
+p{
+  line-height: 1.6;
+  @apply mb-5;
+}
+
+::deep(.text-info) {
+    @apply text-secondary;
+}
+
+::deep(.bg-info) {
+    @apply bg-secondary;
+}
