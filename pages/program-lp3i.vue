@@ -112,17 +112,13 @@
 import { ElementsSectionTitle } from '#components';
 
 // const { data, status } = useAsyncData('program', () => $fetch('/api/program-lp3i'))
-
-const { data, status } = await useAsyncData('program', async () => {
-  try {
-    const response = await $fetch('/api/program-lp3i');
-    console.log('API Response (Server):', response); // Debug SSR
-    return response;
-  } catch (err) {
-    console.error('API Error:', err); // Debug error API
-    return null;
+const apiurl = useRuntimeConfig().public.apiurl
+const { data, status } = useAsyncData('home', () => $fetch(`${apiurl}/wp/v2/pages`, {
+  params: {
+    slug: 'program-lp3i',
+    _fields: 'title,meta,acf'
   }
-}, { server: false });
+}), { server: false })
 
 // create tab content
 const selectedTab = ref(0);
@@ -132,7 +128,7 @@ const tabContent = computed(() => {
 
 const meta = computed(() => data.value?.[0]?.meta ?? {});
 useSeoMeta({
-  title: computed(() => meta.value._seopress_titles_title ?? meta.value._seopress_titles_title),
+  title: computed(() => meta.value._seopress_titles_title ?? 'LP3I'),
   description: computed(() => meta.value._seopress_titles_desc ?? 'Default Description'),
   ogTitle: computed(() => meta.value._seopress_titles_title ?? 'LP3I'),
   ogDescription: computed(() => meta.value._seopress_titles_desc ?? 'LP3I')
