@@ -4,7 +4,7 @@ body{
     font-optical-sizing: auto;
     font-weight:200-800;
     font-style: normal;
-    @apply text-gray-700;
+    @apply text-gray-700 pt-16;
 }
 h1,
 h2,
