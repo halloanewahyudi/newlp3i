@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiurl: process.env.API_URL || 'http://localhost:3000'
+      apiurl: process.env.API_URL || 'https://lp3i.ac.id/wp-json'
     }
   },
 
